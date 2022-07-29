@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from django.views import View
 # Create your views here.
-from django.views.generic import DeleteView ,DetailView
+from django.views.generic import DeleteView ,DetailView ,UpdateView
 from .models import Qaydlar
 from django.urls import reverse_lazy
 class Homview(View):
@@ -51,4 +51,12 @@ class DDetailview(DeleteView ):
     model = Qaydlar
     template_name: str = "delit.html"
     context_object_name:str = 'q'
+    success_url = reverse_lazy('home')
+    
+    
+class UUpdateView(UpdateView):
+    model = Qaydlar
+    template_name = 'edit.html'
+    fields = ['qayd_name','reg_Time','maqsad','muhim']
+    context_object_name:str = 't'
     success_url = reverse_lazy('home')

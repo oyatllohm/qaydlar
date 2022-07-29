@@ -22,6 +22,7 @@
             <th scope="col">vaqt</th>
             <th scope="col">zaril</th>
             <th scope="col">maqsad</th>
+            <th scope="col">Tahrirlash</th>
             <th scope="col">O'chrish</th>
           </tr>
           
@@ -34,7 +35,9 @@
             <td>{{q.reg_Time}}</td>
             <td>{{q.muhim}}</td>
             <td>{{q.maqsad}}  </td>
+            <td> <a href="/edit/{{ q.id}} ">Tahrirlash</a> </td>
             <td> <a href="/detail/{{ q.id}} "> O'chrish</a></td>
+
 
           </tr>
           {% endfor %}
