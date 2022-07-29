@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- <link href="/static/lib/animate/animate.min.css" rel="stylesheet">
+    <link href="/static/lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet"> -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
+
+</head>
+<body>
+    
+    <table class="table">
+        <thead>
+         
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">Qayd</th>
+            <th scope="col">vaqt</th>
+            <th scope="col">zaril</th>
+            <th scope="col">maqsad</th>
+            <th scope="col">O'chrish</th>
+          </tr>
+          
+        </thead>
+        <tbody>
+          {% for q in qayd %}
+          <tr>
+            <th scope="row"> {{q.id}}</th>
+            <td>{{q.qayd_name}}</td>
+            <td>{{q.reg_Time}}</td>
+            <td>{{q.muhim}}</td>
+            <td>{{q.maqsad}}  </td>
+            <td> <a href="/detail/{{ q.id}} "> O'chrish</a></td>
+
+          </tr>
+          {% endfor %}
+        
+        </tbody>
+      </table>
+
+
+   
+      <a href="{% url 'forms'%}" type="button" class="btn btn-success"> Qayd qo'shish </a>
+     
+</body>
+</html>
